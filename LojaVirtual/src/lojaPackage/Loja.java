@@ -8,12 +8,13 @@ public class Loja {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Produto> produtos = new ArrayList<>();
+		Produto ajuda = new Produto();
 		int codigo = 0;
 
 		System.out.println("Bem vindo ao Sistema de Manutenção de Produtos!\n");
 		do {
 			System.out.println(
-					"1 - Cadastrar Produto\n2 - Exibir Produto\n3 - Atualizar Produto\n0 - Sair do Programa\n");
+					"1 - Cadastrar Produto\n2 - Exibir Produto\n3 - Atualizar Produto\n4 - Remover produto\n0 - Sair do Programa\n");
 			System.out.print("Informe que função Deseja acessar: ");
 			codigo = sc.nextInt();
 			System.out.println();
@@ -27,9 +28,7 @@ public class Loja {
 			}
 			case 2: {
 				System.out.println("Produtos disponíveis:");
-				for (int i = 0; i < produtos.size(); i++) {
-					System.out.println((i + 1) + " - " + produtos.get(i).getNome());
-				}
+				ajuda.exibirLista(produtos);
 				System.out.print("\nInforme a ID do produto que deseja visualizar: ");
 				int buscar = sc.nextInt();
 				System.out.println("\nInformações do Produto: ");
@@ -39,13 +38,16 @@ public class Loja {
 			}
 			case 3: {
 				System.out.println("Produtos disponíveis para atualização: ");
-				for (int i = 0; i < produtos.size(); i++) {
-					System.out.println((i + 1) + " - " + produtos.get(i).getNome());
-				}
+				ajuda.exibirLista(produtos);
 				System.out.print("\nInforme o ID do produto que deseja alterar: ");
 				int buscar = sc.nextInt();
 				produtos.get(buscar - 1).preencherProduto();
 				System.out.println("\nInformações Atualizadas!\n");
+				break;
+			}
+			case 4: {
+				System.out.println("Produtos disponíveis para remoção: ");
+				ajuda.exibirLista(produtos);
 				break;
 			}
 			case 0: {

@@ -1,5 +1,6 @@
 package lojaPackage;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Produto {
@@ -63,6 +64,15 @@ public class Produto {
 		System.out.println("\nNome: " + getNome());
 		System.out.printf("Preço: %.2f\n", getPreco());
 		System.out.println("Quantidade: " + getQuantidade());
+	}
+	
+	public void exibirLista (List<Produto> produtos) {
+		int aux = 1;
+		for (Produto i : produtos) {
+			System.out.println(aux + " - " + i.getNome());
+			aux++;
+		}
+		System.out.println();
 	}
 
 }
