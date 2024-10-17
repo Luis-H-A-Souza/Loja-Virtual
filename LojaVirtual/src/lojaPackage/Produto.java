@@ -74,5 +74,14 @@ public class Produto {
 		}
 		System.out.println();
 	}
-
+	
+	public void confirmarLeitura () {
+		 try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		System.out.println("Para continuar aperte ENTER\n");
+		sc.nextLine();
+	}
 }

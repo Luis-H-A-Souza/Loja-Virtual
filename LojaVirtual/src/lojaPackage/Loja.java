@@ -24,6 +24,7 @@ public class Loja {
 				novoProduto.preencherProduto();
 				produtos.add(novoProduto);
 				System.out.println("\nProduto Adicionado com sucesso!\n");
+				ajuda.confirmarLeitura();
 				break;
 			}
 			case 2: {
@@ -34,15 +35,17 @@ public class Loja {
 				System.out.println("\nInformações do Produto: ");
 				produtos.get(buscar - 1).exibirProduto();
 				System.out.println();
+				ajuda.confirmarLeitura();
 				break;
 			}
 			case 3: {
-				System.out.println("Produtos disponíveis para atualização: ");
+				System.out.println("Produtos disponíveis para atualização:\n");
 				ajuda.exibirLista(produtos);
 				System.out.print("Informe o ID do produto que deseja alterar: ");
 				int buscar = sc.nextInt();
 				produtos.get(buscar - 1).preencherProduto();
 				System.out.println("\nInformações Atualizadas!\n");
+				ajuda.confirmarLeitura();
 				break;
 			}
 			case 4: {
@@ -52,6 +55,7 @@ public class Loja {
 				int buscar = sc.nextInt();
 				System.out.println("\nItem Removido com Sucesso!\n");
 				produtos.remove(buscar - 1);
+				ajuda.confirmarLeitura();
 				break;
 			}
 			case 0: {
