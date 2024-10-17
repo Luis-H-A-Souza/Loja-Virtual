@@ -29,7 +29,7 @@ public class Loja {
 			case 2: {
 				System.out.println("Produtos disponíveis:");
 				ajuda.exibirLista(produtos);
-				System.out.print("\nInforme a ID do produto que deseja visualizar: ");
+				System.out.print("Informe a ID do produto que deseja visualizar: ");
 				int buscar = sc.nextInt();
 				System.out.println("\nInformações do Produto: ");
 				produtos.get(buscar - 1).exibirProduto();
@@ -39,7 +39,7 @@ public class Loja {
 			case 3: {
 				System.out.println("Produtos disponíveis para atualização: ");
 				ajuda.exibirLista(produtos);
-				System.out.print("\nInforme o ID do produto que deseja alterar: ");
+				System.out.print("Informe o ID do produto que deseja alterar: ");
 				int buscar = sc.nextInt();
 				produtos.get(buscar - 1).preencherProduto();
 				System.out.println("\nInformações Atualizadas!\n");
@@ -48,6 +48,10 @@ public class Loja {
 			case 4: {
 				System.out.println("Produtos disponíveis para remoção: ");
 				ajuda.exibirLista(produtos);
+				System.out.print("Informe o ID do produto que deseja remover: ");
+				int buscar = sc.nextInt();
+				System.out.println("\nItem Removido com Sucesso!\n");
+				produtos.remove(buscar - 1);
 				break;
 			}
 			case 0: {
@@ -59,7 +63,5 @@ public class Loja {
 			}
 		} while (codigo != 0);
 		sc.close();
-
 	}
-
 }
