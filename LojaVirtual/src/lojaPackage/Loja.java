@@ -9,7 +9,7 @@ public class Loja {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Produto> produtos = new ArrayList<>();
 		Produto ajuda = new Produto();
-		int codigo = 0;
+		int codigo = 0, buscar;
 
 		System.out.println("Bem vindo ao Sistema de Manutenção de Produtos!\n");
 		do {
@@ -31,7 +31,9 @@ public class Loja {
 				System.out.println("Produtos disponíveis:");
 				ajuda.exibirLista(produtos);
 				System.out.print("Informe a ID do produto que deseja visualizar: ");
-				int buscar = sc.nextInt();
+				do {
+					buscar = sc.nextInt();
+				} while (buscar > produtos.size() || buscar < produtos.size());
 				System.out.println("\nInformações do Produto: ");
 				produtos.get(buscar - 1).exibirProduto();
 				System.out.println();
@@ -42,7 +44,9 @@ public class Loja {
 				System.out.println("Produtos disponíveis para atualização:\n");
 				ajuda.exibirLista(produtos);
 				System.out.print("Informe o ID do produto que deseja alterar: ");
-				int buscar = sc.nextInt();
+				do {
+					buscar = sc.nextInt();
+				} while (buscar > produtos.size() || buscar < produtos.size());
 				produtos.get(buscar - 1).preencherProduto();
 				System.out.println("\nInformações Atualizadas!\n");
 				ajuda.confirmarLeitura();
@@ -52,7 +56,9 @@ public class Loja {
 				System.out.println("Produtos disponíveis para remoção: ");
 				ajuda.exibirLista(produtos);
 				System.out.print("Informe o ID do produto que deseja remover: ");
-				int buscar = sc.nextInt();
+				do {
+					buscar = sc.nextInt();
+				} while (buscar > produtos.size() || buscar < produtos.size());
 				System.out.println("\nItem Removido com Sucesso!\n");
 				produtos.remove(buscar - 1);
 				ajuda.confirmarLeitura();
